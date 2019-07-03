@@ -30,8 +30,8 @@ if(isset($_SESSION['login_user']))
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Index</title>
-    <link rel="shortcut icon" href="assets/img/logo.ico"/>
+    <title>Alumni Services</title>
+    <link rel="shortcut icon" href="assets/img/Caleb-University.png"/>
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
     <meta name="author" content="">
     
@@ -80,7 +80,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
  }
  .navbar .navbar-nav {
   display: inline-block;
-  float: none;
+  float: none;  
   vertical-align: top;
 }
 
@@ -137,27 +137,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
 </div>
     <div class="form-signin">
     <div class="text-center">
-        <img src="assets/img/logo.png" alt="Metis Logo" style="width: 100px;">
-                <h5>Cavite State Univeristy</h5>
-        <h3>CVSU-CEIT DIT ONLINE TRACER STUDY</h3>
+        <img src="assets/img/Caleb-University.png" alt="Metis Logo" style="width: 100px;">
+                <h5>Caleb University</h5>
+        <h3>Alumni Services</h3>
 
     </div>
     <hr>
     <div class="text-center">
         <ul class="list-inline">
-            <li><a class="text-muted " href="#login-student" data-toggle="tab">Login as Student</a></li> |
-            <li><a class="text-muted" href="#login-teacher" data-toggle="tab">Login as Teacher</a></li>
+            <li><a class="text-muted " href="#login-alumni" data-toggle="tab">Login as Alumni</a></li> |
+            <li><a class="text-muted" href="#login-admin" data-toggle="tab">Login as Admin</a></li>
         </ul>
     </div>
     
     <hr>
     <div class="tab-content">
-        <div id="login-student" class="tab-pane active">
+        <div id="login-alumni" class="tab-pane active">
             <form  method="POST"  role="form">
                 <p class="text-muted text-center">
                     Enter your username and password
                 </p>
-                <input name="username" type="text" placeholder="Student Number" class="form-control top" required="" onkeyup="numberInputOnly(this);">
+                <input name="username" type="text" placeholder="Alumni Number" class="form-control top" required="" onkeyup="numberInputOnly(this);">
                 <input name="password" type="password" placeholder="Password" class="form-control bottom">
                 <div class="checkbox">
 		  <label>
@@ -169,7 +169,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
 
             </form>
         </div>
-        <div id="login-teacher" class="tab-pane ">
+        <div id="login-admin" class="tab-pane ">
             <form method="POST"  role="form">
                 <p class="text-muted text-center">
                     Enter your username and password
@@ -186,15 +186,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
         </div>
         <div id="forgot" class="tab-pane">
             <form method="POST" action="action/recovery_verify_user.php">
-                <p class="text-muted text-center">Enter Your Username | Student No.</p>
-                <input type="text" placeholder="Username | Student No." class="form-control" name="recovery_user">
+                <p class="text-muted text-center">Enter Your Username | Alumni No.</p>
+                <input type="text" placeholder="Username | Alumni No." class="form-control" name="recovery_user">
                 <br>
                 <input class="btn btn-lg btn-danger btn-block" type="submit" name="recovery-submit" value="Recover Password">
             </form>
         </div>
         <div id="signup" class="tab-pane">
             <form method="POST" action="action/signup_action.php">
-                <input type="text" placeholder="Student Number" class="form-control top"  required="" onkeyup="numberInputOnly(this);" name="student_number">
+                <input type="text" placeholder="Alumni Number" class="form-control top"  required="" onkeyup="numberInputOnly(this);" name="student_number">
                 <input type="password" placeholder="Password" class="form-control middle" required="" name="password">
                 <input type="password" placeholder="Re-password" class="form-control middle" required="" name="re_password">
                 <input type="text" placeholder="Secret Question" class="form-control middle" required="" name="secret_question">
@@ -217,8 +217,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
       <div class="container">
 
         <div class="navbar-header">
-          <img src="assets/img/logo.png" alt=" CvSU Tracer Study" style="width: 40px; margin-top: 6px; ">
-          <a class="navbar-brand" href="#">Tracer Study</a>
+          <img src="assets/img/Caleb-University.png" alt=" CvSU Tracer Study" style="width: 40px; margin-top: 6px; ">
+          <a class="navbar-brand" href="#">Caleb University</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav list-inline">
@@ -232,8 +232,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
       </div>
       <div class="bg-dark dker">
       <center>
-          CVSU-CEIT DIT ONLINE TRACER STUDY <br>
-All Rights Reserved<br>Copyright 2017
+          Caleb University<br>
+All Rights Reserved<br>Copyright 2019
       </center>
       </div>
 
