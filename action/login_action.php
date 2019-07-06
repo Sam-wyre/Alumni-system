@@ -44,10 +44,10 @@ function login(){
 			$username = mysqli_real_escape_string($con,$username);
 			$password = mysqli_real_escape_string($con,$password);
 			
- 			$input = "$password";
-			include('md5.php');
+ 			//$input = "$password";
+			//include('md5.php');
 			// SQL query to fetch information of registerd users and finds user match.
-			$query = mysqli_query($con,"SELECT * FROM `user_account` WHERE `user_name` = '$username' AND `user_password` = '$encrypted'");
+			$query = mysqli_query($con,"SELECT * FROM `user_account` WHERE `user_name` = '$username' AND `user_password` = '$password'");
 			$rows = mysqli_fetch_assoc($query);
 
 			if ($rows['user_level'] == '0') 
