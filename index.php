@@ -29,7 +29,7 @@ if(isset($_SESSION['login_user']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--Mobile first-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these ta gs -->
     <title>Alumni Services</title>
     <link rel="shortcut icon" href="assets/img/Caleb-University.png"/>
     <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
@@ -66,14 +66,7 @@ if(isset($_SESSION['login_user']))
 
     <style type="text/css">
         .custombody{
-            /*Body Background*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b2e1ff+0,60c2ff+13,bce6ff+29,82cfff+46,89d2ff+47,82cfff+49,82cfff+65,bce6ff+83,66b6fc+100 */
-background: #b2e1ff; /* Old browsers */
-background: -moz-linear-gradient(-45deg, #b2e1ff 0%, #60c2ff 13%, #bce6ff 29%, #82cfff 46%, #89d2ff 47%, #82cfff 49%, #82cfff 65%, #bce6ff 83%, #66b6fc 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg, #b2e1ff 0%,#60c2ff 13%,#bce6ff 29%,#82cfff 46%,#89d2ff 47%,#82cfff 49%,#82cfff 65%,#bce6ff 83%,#66b6fc 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg, #b2e1ff 0%,#60c2ff 13%,#bce6ff 29%,#82cfff 46%,#89d2ff 47%,#82cfff 49%,#82cfff 65%,#bce6ff 83%,#66b6fc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-/*End of Body Background*/
+          
         }
  a{
      color:#ff9800;
@@ -126,7 +119,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
     </style>
 </head>
 
-<body class="login custombody" >
+<body style="background: url(assets/img/bg-caleb4.jpg) no-repeat;" class="login custombody" >
 <div id="dialogoverlay"></div>
 <div id="dialogbox">
   <div>
@@ -139,14 +132,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
     <div class="text-center">
         <img src="assets/img/Caleb-University.png" alt="Metis Logo" style="width: 100px;">
                 <h5>Caleb University</h5>
-        <h3>Alumni Services</h3>
+        <h3>Alum Login</h3>
 
     </div>
     <hr>
     <div class="text-center">
         <ul class="list-inline">
             <li><a class="text-muted " href="#login-alumni" data-toggle="tab">Login as Alumni</a></li> |
-            <li><a class="text-muted" href="#login-admin" data-toggle="tab">Login as Admin</a></li>
+            <li><a class="text-muted" href="login-admin.php" >Login as Admin</a></li>
         </ul>
     </div>
     
@@ -157,7 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
                 <p class="text-muted text-center">
                     Enter your username and password
                 </p>
-                <input name="username" type="text" placeholder="Alumni Number" class="form-control top" required="" onkeyup="numberInputOnly(this);">
+                <input name="username" type="text" placeholder="Alum Name" class="form-control top" >
                 <input name="password" type="password" placeholder="Password" class="form-control bottom">
                 <div class="checkbox">
 		  <label>
@@ -208,7 +201,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
     <div class="text-center">
         <ul class="list-inline">
             <li><a class="text-muted" href="#forgot" data-toggle="tab">Forgot Password</a></li>
-            <li><a class="text-muted" href="#signup" data-toggle="tab">Signup</a></li>
+            <li><a class="text-muted" href="registration.php" >Signup</a></li>
         </ul>
     </div>
   </div>
@@ -232,8 +225,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', end
       </div>
       <div class="bg-dark dker">
       <center>
-          Caleb University<br>
-All Rights Reserved<br>Copyright 2019
+          Caleb University | 
+All Rights Reserved | Copyright 2019
       </center>
       </div>
 
