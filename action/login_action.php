@@ -31,9 +31,7 @@ if (isset($_POST['submit-teacher'])) {
 			login();
 		}
 }
-
 function login(){
-
 			$con = mysqli_connect('localhost','root','','tracerdata') or die("ERROR");
 			// Define $username and $password
 			$username=$_POST['username'];
@@ -49,7 +47,6 @@ function login(){
 			// SQL query to fetch information of registerd users and finds user match.
 			$query = mysqli_query($con,"SELECT * FROM `user_account` WHERE `user_name` = '$username' AND `user_password` = '$password'");
 			$rows = mysqli_fetch_assoc($query);
-
 			if ($rows['user_level'] == '0') 
 			{	
 				$_SESSION['login_user']=$username; // Initializing Session
@@ -86,8 +83,4 @@ function login(){
 			}
 			mysqli_close($con); // Closing Connection
 }
-
-
-
-
 ?>

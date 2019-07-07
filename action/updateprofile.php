@@ -103,12 +103,14 @@ else if (isset($_POST['update_bday'])) {
 	$new_bday = $_POST['new_bday'];
 	$new_bday = stripslashes($new_bday);
 	$new_bday = mysqli_real_escape_string($con,$new_bday);
-	$sql = "UPDATE `user_".$user_type."_detail` SET `".$user_type."_dob` = '$new_bday' WHERE `".$user_type."_userID` = '$login_id'";
+
+
+	$sql = "INSERT `user_".$user_type."_detail` (student_userID, student_dob) VALUES ('$login_id','$new_bday')	 ON DUPLICATE KEY UPDATE `user_".$user_type."_detail` SET `".$user_type."_dob` = '$new_bday' WHERE `".$user_type."_userID` = '$login_id'";
 	mysqli_query($con,$sql);
 	
-	// echo "<script>alert('successfully Update!');
-	// 			window.location='../profile.php';
-	// 		</script>";
+	 echo "<script>alert('successfully Update!');
+	 			window.location='../profile.php';
+	 		</script>";
 }
 else if (isset($_POST['update_contact'])) {
 	# code...update_contact

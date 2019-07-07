@@ -171,8 +171,8 @@ else
                                       </div>
                                       <div class="panel-body bio-graph-info">
                                           <h1>Bio Graph
-                              <a href="" class="pull-right btn btn-primary" data-toggle="modal" data-target="#test-modal">EDIT</a></h1>
-                                          
+                              <a href="" class="pull-right btn btn-primary" data-toggle="modal" data-target="#myModal">Create Profile</a></h1>
+                              <a class="pull-right btn btn-primary" class='btn btn-metis-5' href='recordstudent_edit.php?student_userID = $login_id'><i class='fa fa-edit'></i></a>       
                                           <div class="row">
                                               <div class="bio-row">
                                                 <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/profile_img/<?php echo $res_sidebar[$userType.'_img'];?>" style="width: 64px; height: 64px;">
@@ -390,6 +390,178 @@ INNER JOIN cvsu_course cc ON usd.student_department = cc.course_ID WHERE student
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+
+
+
+
+
+<!-- Edit Modal -->
+<div class="container">
+      <div class="modal fade" id="myModal" data-modal-index="1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Add Student Record</h4>
+      </div>
+      <div class="modal-body">
+       
+                             
+                             <div class="body">
+                                <form id="myform" class="form-horizontal" method="POST" action="action/recordstudents_action.php">
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">ID Number</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="text" id="text1" placeholder="ID Number" class="form-control" name="student_sinumber" onkeyup="numberInputOnly(this);" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">First Name</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="text" id="text1" placeholder="First Name" class="form-control" name="student_firstname" onkeyup="letterInputOnly(this);" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4" >Middle Name</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="text" id="text1" placeholder="Middle Name" class="form-control" name="student_middlename" onkeyup="letterInputOnly(this);" required=""  maxlength="1">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Last Name</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="text" id="text1" placeholder="Last Name" class="form-control" name="student_lastname" onkeyup="letterInputOnly(this);" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Birthday</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="date" id="text1" placeholder="Birthday" class="form-control" name="student_dob">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Contact</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="text" id="text1" placeholder="Contact" class="form-control" name="student_contact" onkeyup="numberInputOnly(this);" required=""  min="9" max="9">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Gender</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" name="student_gender">
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Civil Stat</label>
+                                    <div class="col-lg-8">
+                                        <select class="form-control" name="student_civil">
+                                            <?php 
+                                            $mstat_q = mysqli_query($con,"SELECT * FROM `marital_status`");
+                                            while ($mstat = mysqli_fetch_array($mstat_q)) {
+                                               ?>
+                                                <option value="<?php echo $mstat['ID']; ?>"><?php echo $mstat['marital_Name']; ?></option>
+                                               <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Address</label>
+
+                                    <div class="col-lg-8">
+                                        <input type="text" id="text1" placeholder="Address" class="form-control" name="student_adress" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Course</label>
+
+                                    <div class="col-lg-8">
+                                    <?php 
+                                    $query_dep = mysqli_query($con,"SELECT * FROM `cvsu_course`");
+                                    ?>
+                                        <select class="form-control" name="student_department" required="">
+                                        <?php
+                                        while ($res_dep = mysqli_fetch_array($query_dep)) {
+                                        
+                                        ?>
+                                            <option value="<?php echo $res_dep['course_ID'] ?>"><?php echo $res_dep['course_name'];?></option>
+                                        <?php 
+                                        }
+                                        ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Year Admission</label>
+
+                                    <div class="col-lg-8">
+                                    <div class="input-group date" id="">
+                                        <input type="date" class="form-control" name="student_year_admission" required="">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                                      </span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4">Year Graduate</label>
+
+                                    <div class="col-lg-8">
+                                    <div class="input-group date" id="">
+                                        <input type="date" class="form-control" name="student_year_grad" required="">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                                      </span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="text1" class="control-label col-lg-4"></label>
+                                    <div class="col-lg-8">
+                                    <div class="input-group date" id="">
+                                        <input class="btn btn-success" type="submit" name="submit_recordstudents" value="Submit">
+                                      </span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- /.form-group -->
+                               
+                                <!-- Trigger the modal with a button -->
+                                <div></div>
+                                
+
+                             
+                            </form>
+                             </div>
+
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+
+
+
+
+
 
     <div class="modal fade" id="modal-newpassword" data-modal-index="2">
   <div class="modal-dialog">

@@ -6,10 +6,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
     
-    <meta name="description" content="Trace System Study">
+    <meta name="description" content="Alumni Management System">
     <meta name="author" content="">
     
     <meta name="msapplication-TileColor" content="#5bc0de" />
     <meta name="msapplication-TileImage" content="assets/img/metis-tile.png" />
     
-    <link rel="shortcut icon" href="assets/img/logo.ico"/>
+    <link rel="shortcut icon" href="assets/img/Caleb-University.png"/>

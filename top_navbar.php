@@ -64,7 +64,7 @@ $res['student_img'];
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="index.php" class="navbar-brand"><img src="assets/img/logo.png" alt="" style="width: 50px;">
+            <a href="index.php" class="navbar-brand"><img src="assets/img/Caleb-University.png" alt="" style="width: 50px;">
             </a>
 
         </header>
@@ -111,7 +111,7 @@ $res['student_img'];
 
             <!-- .nav -->
             <ul class="nav navbar-nav">
-                <li><a href="dashboard.php">Welcome to: CVSU-CEIT DIT ONLINE TRACER STUDY</a>
+                <li><a href="dashboard.php">Welcome to Caleb University Alumni Management System</a>
                 </li>
 
             </ul>

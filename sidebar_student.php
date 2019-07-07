@@ -110,8 +110,9 @@ $userType = "student";
                                       </li>
                                     </ul>
                                   </li>
+                                  
                                   <?php 
-                                  if ($page == 'survey')
+                                  if ($page == 'profile')
                                   {
                                     ?>
                                      <li class="active">
@@ -124,46 +125,18 @@ $userType = "student";
                                   <?php
                                   }
                                    ?>
-                                    <a href="<?php 
-                                    if($survey_maxattemp['survey_maxattemp']  <= '1')
-                                    {
-                                      echo "surveyview.php";
-                                    }
-                                    else{
-                                      echo "survey.php";
-                                    }
-                                    ?>">
-
+                                    <a href="profile.php">
                                       <span class="link-title">
-                                    Survey
-                                  </span>
-                                  <span class="fa arrow"></span>
-                                    </a>
-                                    
-                                  </li>
-                                  <?php 
-                                  if ($page == 'statistic')
-                                  {
-                                    ?>
-                                     <li class="active">
-                                    <?php
-                                  }
-                                  else
-                                  {
-                                    ?>
-                                   <li class="">
-                                  <?php
-                                  }
-                                   ?>
-                                    <a href="statistic.php?category=accountregister&date=">
-                                      <span class="link-title">
-                                    Statistic
+                                    My Profile
                                   </span>
                                       <span class="fa arrow"></span>
                                     </a>
                                     
                                   </li>
+
+
                                 </ul>
+                                
                         <!-- /#menu -->
                       
                     </div>
