@@ -3,6 +3,7 @@
 include('session.php'); 
 include('db.php');
 
+
 // $survey_maxcount_qry = mysqli_query($con,"SELECT survey_maxattemp FROM `survey_maxcount` WHERE survey_ownerID = '$login_id'");
 // $survey_maxattemp = mysqli_fetch_array($survey_maxcount_qry);
 $page = 'dashboard';
@@ -32,6 +33,14 @@ else
 {
 }
 ?>
+
+<?php
+$sam = mysqli_query($con,"SELECT student_ID FROM user_student_detail WHERE student_userID='$login_id'");
+$row = mysqli_fetch_assoc($sam);
+$student = $row['student_ID'];
+
+?>
+
 <!DOCTYPE html>
 <html>  
   <head>
@@ -170,9 +179,12 @@ else
                                               
                                       </div>
                                       <div class="panel-body bio-graph-info">
-                                          <h1>Bio Graph
+                                          <h1>My Profile
                               <a href="" class="pull-right btn btn-primary" data-toggle="modal" data-target="#myModal">Create Profile</a></h1>
-                              <a class="pull-right btn btn-primary" class='btn btn-metis-5' href='recordstudent_edit.php?student_userID = $login_id'><i class='fa fa-edit'></i></a>       
+                              
+                            
+
+                              <a class="pull-right btn btn-primary" class='btn btn-metis-5' href='recordstudents_edit.php?studentID=<?php echo  $student ?>'><i class='fa fa-edit'></i>Edit Profile</a>       
                                           <div class="row">
                                               <div class="bio-row">
                                                 <img class="media-object img-thumbnail user-img" alt="User Picture" src="assets/img/profile_img/<?php echo $res_sidebar[$userType.'_img'];?>" style="width: 64px; height: 64px;">
@@ -212,7 +224,7 @@ else
                                                 if ($userType == "student") {
                                                   ?>
                                                    <div class="bio-row">
-                                                  <p><span>ID Number </span>: <?php echo $res_sidebar[$userType.'_IDNumber'];?></p>
+                                                  <p><span>Alum Name </span>: <?php echo $res_sidebar[$userType.'_IDNumber'];?></p>
                                               </div>
                                                   <?php
                                                   
@@ -404,7 +416,7 @@ INNER JOIN cvsu_course cc ON usd.student_department = cc.course_ID WHERE student
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Add Student Record</h4>
+        <h4 class="modal-title">Create Profile</h4>
       </div>
       <div class="modal-body">
        
@@ -412,10 +424,10 @@ INNER JOIN cvsu_course cc ON usd.student_department = cc.course_ID WHERE student
                              <div class="body">
                                 <form id="myform" class="form-horizontal" method="POST" action="action/recordstudents_action.php">
                                 <div class="form-group">
-                                    <label for="text1" class="control-label col-lg-4">ID Number</label>
+                                    <label for="text1" class="control-label col-lg-4">Username</label>
 
                                     <div class="col-lg-8">
-                                        <input type="text" id="text1" placeholder="ID Number" class="form-control" name="student_sinumber" onkeyup="numberInputOnly(this);" required="">
+                                        <input type="text" id="text1" placeholder="Username" class="form-control" name="student_sinumber" required="">
                                     </div>
                                 </div>
                                 <div class="form-group">

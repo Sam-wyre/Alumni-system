@@ -147,7 +147,7 @@ if(isset($_SESSION['login_user']))
     <div class="tab-content">
         <div id="forgot" class="tab-pane">
             <form method="POST" action="action/recovery_verify_user.php">
-                <p class="text-muted text-center">Enter Your Username | Alumni No.</p>
+                <p class="text-muted text-center">Enter Your Username | Alum Name</p>
                 <input type="text" placeholder="Username | Alumni No." class="form-control" name="recovery_user">
                 <br>
                 <input class="btn btn-lg btn-danger btn-block" type="submit" name="recovery-submit" value="Recover Password">
@@ -155,7 +155,7 @@ if(isset($_SESSION['login_user']))
         </div>
         <div id="signup" class="tab-pane active">
             <form method="POST" action="action/signup_action.php">
-                <input type="text" placeholder="Alumni Number" class="form-control top"  required="" onkeyup="numberInputOnly(this);" name="student_number">
+                <input type="text" placeholder="Alum Name" class="form-control top"  required="" name="student_number">
                 <input type="password" placeholder="Password" class="form-control middle" required="" name="password">
                 <input type="password" placeholder="Re-password" class="form-control middle" required="" name="re_password">
                 <input type="text" placeholder="Secret Question" class="form-control middle" required="" name="secret_question">
@@ -174,23 +174,8 @@ if(isset($_SESSION['login_user']))
     </div>
   </div>
 
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-      <div class="container">
-
-        <div class="navbar-header">
-          <img src="assets/img/Caleb-University.png" alt=" CvSU Tracer Study" style="width: 40px; margin-top: 6px; ">
-          <a class="navbar-brand" href="#">Caleb University</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav list-inline">
-            <li class="active"><a href="#login-student" data-toggle="tab">Log-in</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#objective">Department Objective</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#goal">Department Goal</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#Overview">Overview</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#SystemDeveloper">System Developer</a></li>
-          </ul>
-          </div><!--/.nav-collapse -->
-      </div>
+        <nav class=" navbar-fixed-bottom">
+      
       <div class="bg-dark dker">
       <center>
           Caleb University | 

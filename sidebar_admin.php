@@ -89,50 +89,7 @@ $userType = "admin";
                                       </li>
                                     </ul>
                                   </li>
-                                  <?php 
-                                  if ($page == 'statistic')
-                                  {
-                                    ?>
-                                     <li class="active">
-                                    <?php
-                                  }
-                                  else
-                                  {
-                                    ?>
-                                   <li class="">
-                                  <?php
-                                  }
-                                   ?>
-                                    <a href="statistic.php">
-                                      <span class="link-title">
-                                    Statistic
-                                  </span>
-                                      <span class="fa arrow"></span>
-                                    </a>
-                                    
-                                  </li>
-                                   <?php 
-                                  if ($page == 'recordstudent')
-                                  {
-                                    ?>
-                                     <li class="active">
-                                    <?php
-                                  }
-                                  else
-                                  {
-                                    ?>
-                                   <li class="">
-                                  <?php
-                                  }
-                                   ?>
-                                    <a href="recordstudent.php">
-                                      <span class="link-title">
-                                    Record Student
-                                  </span>
-                                      <span class="fa arrow"></span>
-                                    </a>
-                                    
-                                  </li>
+                                 
                                    <?php 
                                   if ($page == 'recordteacher')
                                   {
@@ -149,7 +106,7 @@ $userType = "admin";
                                    ?>
                                     <a href="recordteacher.php">
                                       <span class="link-title">
-                                    Record Teacher
+                                    Add Admin
                                   </span>
                                       <span class="fa arrow"></span>
                                     </a>
@@ -199,28 +156,7 @@ $userType = "admin";
                                     </a>
                                     
                                   </li>
-                                  <?php 
-                                  if ($page == 'survey_mng')
-                                  {
-                                    ?>
-                                     <li class="active">
-                                    <?php
-                                  }
-                                  else
-                                  {
-                                    ?>
-                                   <li class="">
-                                  <?php
-                                  }
-                                   ?>
-                                    <a href="survey_mng.php">
-                                      <span class="link-title">
-                                    Survey 
-                                  </span>
-                                      <span class="fa arrow"></span>
-                                    </a>
-                                    
-                                  </li>
+                                  
                                 </ul>
                         <!-- /#menu -->
                       

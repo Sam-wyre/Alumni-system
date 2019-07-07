@@ -11,26 +11,26 @@ $requestData= $_REQUEST;
 $columns = array( 
 // datatable column index  => database column name
 	
-	0 =>'teacher_lName', 
-	1 => 'teacher_fName',
-	2 => 'teacher_department',
+	0 =>'admin_lName', 
+	1 => 'admin_fName',
+	2 => 'admin_status',
 );
 
 // getting total number records without any search
-$sql = "SELECT teacher_ID, teacher_fName, teacher_mName, teacher_lName, teacher_department  ";
-$sql.=" FROM user_teacher_detail";
+$sql = "SELECT admin_ID, admin_fName, admin_mName, admin_lName, admin_status  ";
+$sql.=" FROM user_admin_detail";
 $query=mysqli_query($con, $sql) or die("serverside_data_registerstud.php: get employees");
 $totalData = mysqli_num_rows($query);
 $totalFiltered = $totalData;  // when there is no search parameter then total number rows = total number filtered rows.
 
 
-$sql = "SELECT teacher_ID, teacher_fName, teacher_mName, teacher_lName, teacher_department  ";
-$sql.=" FROM user_teacher_detail WHERE 1=1";
+$sql = "SELECT admin_ID, admin_fName, admin_mName, admin_lName, admin_status  ";
+$sql.=" FROM user_admin_detail WHERE 1=1";
 if( !empty($requestData['search']['value']) ) {   // if there is a search parameter, $requestData['search']['value'] contains search parameter
-	$sql.=" AND ( teacher_fName LIKE '%".$requestData['search']['value']."%' ";    
-	$sql.=" OR teacher_mName LIKE '%".$requestData['search']['value']."%' ";
-	$sql.=" OR teacher_lName LIKE '%".$requestData['search']['value']."%' ";
-	$sql.=" OR teacher_department LIKE '%".$requestData['search']['value']."%' )";
+	$sql.=" AND ( admin_fName LIKE '%".$requestData['search']['value']."%' ";    
+	$sql.=" OR admin_mName LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR admin_lName LIKE '%".$requestData['search']['value']."%' ";
+	$sql.=" OR admin_status LIKE '%".$requestData['search']['value']."%' )";
 	// $sql.=" OR teacher_department LIKE '%".$requestData['search']['value']."%' )";
 }
 $query=mysqli_query($con, $sql) or die("serverside_data_registerstud.php: get employees");
@@ -42,13 +42,13 @@ $query=mysqli_query($con, $sql) or die("serverside_data_registerstud.php: get em
 $data = array();
 while( $row=mysqli_fetch_array($query) ) {  // preparing an array
 	$nestedData=array(); 
-	$teacher_ID = $row["teacher_ID"];
-	$nestedData[] = $row["teacher_lName"].', '.$row["teacher_fName"].' '.$row["teacher_mName"].'.';
-	$teacher_department = $row["teacher_department"];
-	$x = mysqli_query($con,"SELECT `department_name` FROM `cvsu_department` WHERE department_ID = '$teacher_department'");
+	$teacher_ID = $row["admin_ID"];
+	$nestedData[] = $row["admin_lName"].', '.$row["admin_fName"].' '.$row["admin_mName"].'.';
+	$teacher_department = $row["admin_status"];
+	$x = mysqli_query($con,"SELECT `admin_ID` FROM `user_admin_detail` WHERE admin_status = '$teacher_department'");
 	$a = mysqli_fetch_array($x);
 
-	$nestedData[] = $a["department_name"];
+	$nestedData[] = $a["admin_ID"];
 	$nestedData[] = "<div class='btn-group'>  
 	 <a type='button' class='btn btn-primary' href='recordteacher_view.php?teacherID=$teacher_ID'><i class='fa fa-eye'></i></a>                                 
 	<a  class='btn btn-metis-5' href='recordteacher_edit.php?teacherID=$teacher_ID'><i class='fa fa-edit'></i></a>

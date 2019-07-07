@@ -131,15 +131,14 @@ if(isset($_SESSION['login_user']))
     <div class="form-signin">
     <div class="text-center">
         <img src="assets/img/Caleb-University.png" alt="Metis Logo" style="width: 100px;">
-                <h5>Caleb University</h5>
-        <h3>Alum Login</h3>
+                <h3>Caleb University</h3>
+        <h5>Alumni Management Information System</h5>
 
     </div>
     <hr>
     <div class="text-center">
         <ul class="list-inline">
-            <li><a class="text-muted " href="#login-alumni" data-toggle="tab">Login as Alumni</a></li> |
-            <li><a class="text-muted" href="login-admin.php" >Login as Admin</a></li>
+            <li><a class="text-muted " href="#login-alumni" data-toggle="tab">Login as Alumni</a></li>
         </ul>
     </div>
     
@@ -206,23 +205,8 @@ if(isset($_SESSION['login_user']))
     </div>
   </div>
 
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-      <div class="container">
-
-        <div class="navbar-header">
-          <img src="assets/img/Caleb-University.png" alt=" CvSU Tracer Study" style="width: 40px; margin-top: 6px; ">
-          <a class="navbar-brand" href="#">Caleb University</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav list-inline">
-            <li class="active"><a href="#login-student" data-toggle="tab">Log-in</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#objective">Department Objective</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#goal">Department Goal</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#Overview">Overview</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#SystemDeveloper">System Developer</a></li>
-          </ul>
-          </div><!--/.nav-collapse -->
-      </div>
+        <nav class=" navbar-fixed-bottom">
+      
       <div class="bg-dark dker">
       <center>
           Caleb University | 

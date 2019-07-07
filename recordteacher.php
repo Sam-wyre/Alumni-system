@@ -65,8 +65,8 @@ else
                         <header class="head">
                             <div class="main-bar">
                             <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                              <li class="breadcrumb-item active"> Record Teacher Detail</li>
+                              <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                              <li class="breadcrumb-item active"> Add Admin</li>
                             </ol>
                             </div>
                             <!-- /.main-bar -->
@@ -103,13 +103,7 @@ else
                                         <input type="Password" id="text1" placeholder="Confirm Password" class="form-control" name="teacher_rePassword" >
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="text1" class="control-label col-lg-4">Faculty ID</label>
-
-                                    <div class="col-lg-8">
-                                        <input type="text" id="text1" placeholder="ID Number" class="form-control" name="teacher_finumber" onkeyup="numberInputOnly(this);">
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group">
                                     <label for="text1" class="control-label col-lg-4">First Name</label>
 
@@ -216,7 +210,7 @@ else
                                     <thead>
                                         <tr >
                                             <th class="col-sm-2">Name</th>
-                                            <th class="col-sm-3">Department</th>
+                                            <th class="col-sm-3">ID</th>
                                             <th class="col-sm-2">Action</th>
                                         </tr>
                                     </thead>

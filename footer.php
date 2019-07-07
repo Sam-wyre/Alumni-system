@@ -1,4 +1,4 @@
 <footer class="Footer bg-dark dker">
-    <p>CVSU-CEIT DIT ONLINE TRACER STUDY
-        <br>All Rights Reserved Copyright 2017</p>
+    <p>Caleb University Alumni Management System
+        <br>All Rights Reserved Copyright 2019</p>
 </footer>
